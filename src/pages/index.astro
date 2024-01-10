@@ -1,0 +1,538 @@
+---
+// Importa e inyecta 'style.css' en la página
+import '../../public/css/style.css';
+import '../../public/css/fonts.css';
+import '../../public/css/bootstrap.css';
+
+---
+
+<html class="wide" lang="es">
+  <head>
+    <title>Evento</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Barlow%7CBarlow+Condensed:300,400,500,600,700,900">
+  </head>
+  <body>
+    <div class="page">
+      <!-- Section Header Default-->
+      <!-- Section Swiper Slider-->
+      <section class="section section-swiper-absoulte context-dark text-center wow fadeIn">
+        <!-- Waves-->
+        <canvas class="waves" data-speed="5" data-wave-width="150%" data-animation="SineInOut"></canvas>
+        <!-- Swiper Content-->
+        <div class="section-swiper-content">
+          <div class="container">
+            <div class="row justify-content-lg-center">
+              <div class="col-lg-10">
+                <div class="badge-promo wow fadeScale" data-wow-delay=".6s"><span class="badge-promo-text">Evento solidario</span>
+                  <svg class="badge-promo-icon" width="319" height="49" viewBox="0 0 319 49" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 0H319L299 25L319 49H0L20 25L0 0Z" fill="url( #svg-gradient-primary )"></path>
+                    <path opacity="0.08" fill-rule="evenodd" clip-rule="evenodd" d="M0 0H319L299 25L319 49L0 0Z" fill="white"></path>
+                  </svg>
+                </div>
+                <h4 class="wow fadeInUp text-spacing-200" data-wow-delay=".8s" data-caption-animate="fadeInUp" data-caption-delay="300" data-caption-duration="900">Deporte, nutrición y emprendimiento</h4>
+                <h1 class="wow fadeScale" data-caption-animate="fadeInUp" data-caption-delay="100" data-caption-duration="900">fin de semana élite</h1>
+                <!-- List Inline-->
+                <ul class="list-inline list-inline-md wow" data-splitting data-wow-delay="1.5s">
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left line-height-reset">
+                        <svg class="svg-icon-sm svg-icon-primary" role="img">
+                          <use xlink:href="/src/images/sprite.svg#earth-globe"></use>
+                        </svg>
+                      </div>
+                      <div class="unit-body">
+                        <h5 class="text-spacing-100"><span class="big">Segovia</span></h5>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="unit unit-spacing-xs align-items-center">
+                      <div class="unit-left line-height-reset">
+                        <svg class="svg-icon-sm svg-icon-primary" role="img">
+                          <use xlink:href="/src/images/sprite.svg#small-calendar"></use>
+                        </svg>
+                      </div>
+                      <div class="unit-body">
+                        <h5 class="text-spacing-100"><span class="big">
+                            <time datetime="2024-04-06">6 y 7 de abril de 2024</time></span></h5>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Swiper Slider Absolute-->
+        <div class="swiper-container swiper-slider swiper-slider-1">
+          <div class="swiper-wrapper">
+            <!-- Swiper Slide 01-->
+            <div class="swiper-slide" data-slide-bg="/src/images/slide-01-1894x1042.jpg"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Section Book Your Ticket-->
+      <section class="parallax-container section" data-parallax-img="/src/images/bg-parallax-01-1894x778.jpg">
+        <div class="parallax-content section-lg context-dark text-center parallax-overlay-gradient-primary">
+          <div class="container wow fadeIn">
+            <!-- Block with content-->
+            <div class="block-lg block-center">
+              <h6>EL TIEMPO SE ACABA</h6>
+              <h3>Compra tu ticket</h3>
+              <p>¡No pierdas la oportunidad única de asegurar tu lugar a un precio especial! Solo por tiempo limitado, puedes adquirir tu ticket por tan solo 165€. ¡Actúa ahora y ahorra 20€ antes de que la oferta expire el 30 de enero! </p>
+              <p>No te arriesgues a pagar más tarde, asegura tu entrada y únete a nosotros para una experiencia inolvidable. ¡Compra hoy y vive el evento al máximo! </p>
+              <!-- Countdown rectangle-->
+              <div class="countdown countdown-rect" data-countdown="data-countdown" data-to="2024-04-06">
+                <div class="countdown-block box-with-triangle-right wow fadeScale countdown-block-days" data-wow-delay="0s" data-triangle=".countdown-block-overlay">
+                  <div class="countdown-block-overlay"></div>
+                  <svg class="countdown-circle" x="0" y="0" width="200" height="237" viewBox="0 0 200 237" data-progress-days="">
+                    <rect class="countdown-rect-bg" x="0" y="0" width="200" height="237"></rect>
+                    <rect class="countdown-rect-fg clipped" x="0" y="0" width="200" height="237"></rect>
+                  </svg>
+                  <div class="countdown-wrap">
+                    <div class="countdown-counter" data-counter-days="">00</div>
+                    <div class="countdown-title">Días</div>
+                  </div>
+                </div>
+                <div class="countdown-block box-with-triangle-right wow fadeScale countdown-block-hours" data-wow-delay="0.125s" data-triangle=".countdown-block-overlay">
+                  <div class="countdown-block-overlay"></div>
+                  <svg class="countdown-circle" x="0" y="0" width="200" height="237" viewBox="0 0 200 237" data-progress-hours="">
+                    <rect class="countdown-rect-bg" x="0" y="0" width="200" height="237"></rect>
+                    <rect class="countdown-rect-fg clipped" x="0" y="0" width="200" height="237"></rect>
+                  </svg>
+                  <div class="countdown-wrap">
+                    <div class="countdown-counter" data-counter-hours="">00</div>
+                    <div class="countdown-title">horas</div>
+                  </div>
+                </div>
+                <div class="countdown-block box-with-triangle-right wow fadeScale countdown-block-minutes" data-wow-delay="0.25s" data-triangle=".countdown-block-overlay">
+                  <div class="countdown-block-overlay"></div>
+                  <svg class="countdown-circle" x="0" y="0" width="200" height="237" viewBox="0 0 200 237" data-progress-minutes="">
+                    <rect class="countdown-rect-bg" x="0" y="0" width="200" height="237"></rect>
+                    <rect class="countdown-rect-fg clipped" x="0" y="0" width="200" height="237"></rect>
+                  </svg>
+                  <div class="countdown-wrap">
+                    <div class="countdown-counter" data-counter-minutes="">00</div>
+                    <div class="countdown-title">minutos</div>
+                  </div>
+                </div>
+                <div class="countdown-block box-with-triangle-right wow fadeScale countdown-block-seconds" data-wow-delay="0.375s" data-triangle=".countdown-block-overlay">
+                  <div class="countdown-block-overlay"></div>
+                  <svg class="countdown-circle" x="0" y="0" width="200" height="237" viewBox="0 0 200 237" data-progress-seconds="">
+                    <rect class="countdown-rect-bg" x="0" y="0" width="200" height="237"></rect>
+                    <rect class="countdown-rect-fg clipped" x="0" y="0" width="200" height="237"></rect>
+                  </svg>
+                  <div class="countdown-wrap">
+                    <div class="countdown-counter" data-counter-seconds="">00</div>
+                    <div class="countdown-title">segundos</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="button button-primary" href="#comprar" data-triangle=".button-overlay"><span>Comprar Ticket</span><span class="button-overlay"></span></a>
+        </div>
+      </section>
+      <!-- Section Biggest 2019 Digital Conference-->
+      <section class="section section-lg bg-default wow fadeIn">
+        <div class="container">
+          <div class="row row-30 justify-content-center">
+            <div class="col-lg-11">
+              <h6>sobre el evento</h6>
+              <h3 class="heading-lg-postfix-15">Fin de semana élite.</h3>
+              <p>¡Prepárate para un fin de semana épico donde el deporte, la nutrición y el emprendimiento se unen para transformar tu vida! Únete a nosotros en este evento único, donde expertos de élite compartirán sus conocimientos en conferencias exclusivas sobre nutrición diseñada para optimizar el rendimiento deportivo.</p>
+
+<p>Sumérgete en sesiones informativas que van desde estrategias nutricionales para atletas hasta secretos para alcanzar tus metas en el deporte. Pero eso no es todo, también te ofrecemos un enfoque integral con potentes conferencias sobre educación financiera y emprendimiento, para que puedas llevar tu vida al siguiente nivel.</p>
+
+<p>Este fin de semana será más que un evento, será una experiencia transformadora donde el conocimiento se encuentra con la acción. Aprovecha esta oportunidad única para aprender, crecer y conectar con otros apasionados por el deporte, la nutrición y el emprendimiento.</p>
+
+<p>¡No te quedes fuera! Asegura tu lugar ahora y sé parte de esta increíble jornada que cambiará la forma en que vives el deporte y abordas tus metas financieras. ¡Nos vemos allí!</p>
+              <!-- List Inline-->
+              <ul class="list-inline list-inline-xl">
+                <li>
+                  <div class="unit">
+                    <div class="unit-left">
+                      <svg class="svg-icon-sm svg-icon-primary" role="img">
+                        <use xlink:href="/images/svg/sprite.svg#earth-globe"></use>
+                      </svg>
+                    </div>
+                    <div class="unit-body">
+                      <h5>Dónde</h5>
+                      <p>Hotel Puerta de Segovia 4*</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="unit">
+                    <div class="unit-left">
+                      <svg class="svg-icon-sm svg-icon-primary" role="img">
+                        <use xlink:href="/images/svg/sprite.svg#small-calendar"></use>
+                      </svg>
+                    </div>
+                    <div class="unit-body">
+                      <h5>Cuando</h5>
+                      <p>
+                        <time datetime="2024-04-06">6 y 7 de abril de 2024</time>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul><a class="button button-primary" href="#comprar" data-triangle=".button-overlay"><span>Comprar Ticket</span><span class="button-overlay"></span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+	  <section class="section section-lg bg-default" id="comprar">
+		<div class="container">
+		  <h4 class="font-weight-bold text-center">Qué Incluye el ticket</h4>
+		  <div class="row row-30">
+			<div>
+			  <div class="pricing-modern-header">
+				<p class="pricing-modern-price heading-3">165.00€ pago único o paga en 3 meses sin intereses</p>
+				<p class="pricing-modern-description">A partir del 30 de Enero serán 185.00€ y sin plazos</p>
+			  </div>
+			  <div class="pricing-modern-body">
+				<h5>Estancia</h5>
+				<ul class="lista">
+				  <li>Habitación noche del sábado con cama en habitación doble. Comida y cena del sábado y desayuno del domingo</li>
+				  <li>Hidratación: 3 litros de agua por persona</li>
+				  <li>Complementación: pre-entreno, bebida isotónica y recuperador</li>
+				  <li>Entrenamiento con entrenadores y deportistas: Campeones de España, Internacionales y Olímpicos</li>
+				  <li>Mesa redonda con los deportistas y entrenadores donde podrás preguntar y pasar un rato con ellos</li>
+				  <li>Regalo de bienvenida</li>
+				</ul>
+				  <h5>Formación</h5>
+				<ul class="lista">
+				  <li>Planificación de la alimentación diaria en entrenamientos, viajes y competiciones</li>
+				  <li>Formación en Complementación: qué son, propiedades, uso, comparativas, qué complementos son mejores para cada deporte</li>
+				  <li>Formación en emprendimiento: Cómo emprender relacionado con el deporte.</li>
+				  <li>Cómo autofinanciarse los gastos relacionados con el deporte: viajes, material, fisioterapia, nutrición… cómo generar unos ingresos extra e ingresos pasivos, y cómo desarrollar una carrera profesional con el deporte y la nutrición</li>
+				  <li>Formación en Educación financiera a nivel amateur y profesional.</li>
+				  <li>Trabajaremos sobre la protección del deportista, el ahorro y la inversión.</li>
+				  <li>Formación para coach</li>
+				</ul>
+			  </div>
+			  <div class="row row-30" style="justify-content: center">
+				<div class="col-md-6 col-lg-4">
+				  <!-- Enlace 1 -->
+				  <a class="button button-primary" href="https://buy.stripe.com/eVa15icgs2CZe5y004" target="_blank" data-triangle=".button-overlay"><span>Comprar Ticket (pagando en 3 meses)</span><span class="button-overlay"></span></a>
+				</div>
+				<div class="col-md-6 col-lg-4">
+				  <!-- Enlace 2 -->
+				  <a class="button button-primary" href="https://buy.stripe.com/dR6g0c1BO5Pb7HafZ0" target="_blank" data-triangle=".button-overlay"><span>Comprar Ticket (pago único)</span><span class="button-overlay"></span></a>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </section>
+	  
+<!-- Section Who Is Speaking-->
+      <section class="parallax-container section" data-parallax-img="/src/images/bg-parallax-02-1894x1950.jpg">
+        <div class="parallax-content section-lg context-dark text-center">
+          <div class="container">
+            <h6 class="text-secondary">Nuestros Speakers</h6>
+            <h3>Quien habla</h3>
+            <div class="row row-30" style="justify-content: center">
+              <div class="col-md-6 col-lg-4">
+                <div>
+                  <!-- Speaker-->
+                  <div class="speaker">
+                    <div class="speaker-img" data-triangle=".speaker-overlay">
+                      <div class="speaker-overlay"></div><img src="/src/images/Javi_Guerra.png" alt="Javi Guerra" height="354"/>
+                      <ul class="speaker-social-list">
+                        <li><a class="icon icon-xs fa-twitter" href="https://twitter.com/javiguerra26?lang=es"></a></li>
+                      </ul>
+                    </div>
+                    <h5 class="speaker-title">Javi Guerra</h5>
+                    <p class="speaker-position">Maratón y Media Maratón</p>
+                    <p class="speaker-position" style="color: #666;">Atleta Profesional<br />
+Olimpico en Tokyo 2020<br />
+4 veces Campeón de España en Maratón<br />
+2 veces  Campeón de España en Media Maratón<br />
+Campeón de España de 10k en Ruta<br />
+</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div>
+                  <!-- Speaker-->
+                  <div class="speaker">
+                    <div class="speaker-img" data-triangle=".speaker-overlay">
+                      <img src="/src/images/Manuel_Carballo.png" alt="Manuel Carballo" height="354"/>
+                      
+                    </div>
+                    <h5 class="speaker-title">Manuel Carballo Sánchez</h5>
+                    <p class="speaker-position">Atletismo, Rugby y Baloncesto</p>
+                    <p class="speaker-position" style="color: #666;">Olímpico e Internacional<br /> 
+Ex Récordman nacional de 100m y 4x100<br />
+Grado en ciencias del deporte y actividad física (CAFYD)<br />
+Premio progresión y medalla de Oro y Brillantes RFEA <br />
+Entrenador Nacional de Atletismo y especialista en Alto Rendimiento Deportivo<br />
+Preparador físico de la Federación de Deportes de Invierno (FEDI) y equipos de 1ª división de Rugby y Baloncesto<br />
+</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div>
+                  <!-- Speaker-->
+                  <div class="speaker">
+                    <div class="speaker-img" data-triangle=".speaker-overlay">
+                      <div class="speaker-overlay"></div><img src="/src/images/David_Lopez.png" alt="David López" height="354"/>
+                      <ul class="speaker-social-list">
+                        <li><a class="icon icon-xs fa-linkedin" href="https://www.linkedin.com/in/david-lopez-cast%C3%A1n-79249aa5/?originalSubdomain=es"></a></li>
+                        <li><a class="icon icon-xs fa-twitter" href="https://twitter.com/DAVIDLOPEZCASTA"></a></li>
+                        <li><a class="icon icon-xs fa-instagram" href="https://www.instagram.com/davidlopezcastan/?hl=es"></a></li>
+                      </ul>
+                    </div>
+                    <h5 class="speaker-title">David López Castán</h5>
+                    <p class="speaker-position">Trail Running y Carreras por Montaña</p>
+                    <p class="speaker-position" style="color: #666;">3º Campeonato del Mundo<br /> 
+4º Campeonato de Europa<br />
+Campeón Copa de España<br />
+Técnico Superior en Actividades Físico Deportivas (TAFAD)<br />
+Entrenador de Trail Running y Carreras por Montaña<br /> 
+Atleta de alto nivel de carreas por montaña (BOCYL)<br />
+Integrante de la Selección Española de carreras por montaña  FEDME y de Castilla y Léon FDMECYL<br />
+</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div>
+                  <!-- Speaker-->
+                  <div class="speaker">
+                    <div class="speaker-img" data-triangle=".speaker-overlay">
+                      <img src="/src/images/JuanCarlos_Garcia.png" alt="Juan Carlos García" height="354"/>
+                    </div>
+                    <h5 class="speaker-title">Juan Carlos García de Andrés</h5>
+                    <p class="speaker-position">Boxeo, kickboxing y defensa personal</p>
+                    <p class="speaker-position" style="color: #666;">Licenciado en INEF<br />
+Entrenador de Alto Rendimiento (BOCYL)<br />
+Entrenador de Medallistas Europeos y Mundiales contando con dos deportistas en el top 10 Mundial<br />
+Entrenador Nacional en Musculación y Fitness: 
+Mas de 30 DAN en diferentes artes marciales<br />
+</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div>
+                  <!-- Speaker-->
+                  <div class="speaker">
+                    <div class="speaker-img" data-triangle=".speaker-overlay">
+                      <div class="speaker-overlay"></div><img src="/src/images/JuanPablo_DeMiguel.png" alt="Juan Pablo de Miguel" height="354"/>
+                      <ul class="speaker-social-list">
+                        <li><a class="icon icon-xs fa-linkedin" href="https://www.linkedin.com/in/juan-pablo-de-miguel-bravo-243478158/?originalSubdomain=es"></a></li>
+                      </ul>
+                    </div>
+                    <h5 class="speaker-title">Juan Pablo de Miguel Bravo</h5>
+                    <p class="speaker-position">Fútbol</p>
+                    <p class="speaker-position" style="color: #666;">Ex Jugador profesional de futbol en 1ª división
+Más de 10 temporadas (Ud. Salamanca, CD. Numancia , Lorca cf, Ud. Las palmas, real oviedo)<br />
+Director deportivo <br />
+Agente deportivo<br />
+Técnico superior en nutrición y nutrición deportiva <br />
+Técnico superior en dietética <br />
+Experto universitario en suplementacion <br />
+</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div>
+                  <!-- Speaker-->
+                  <div class="speaker">
+                    <div class="speaker-img" data-triangle=".speaker-overlay">
+                      <img src="/src/images/Juan_Tenorio.png" alt="Juan Tenorio" height="354"/>
+                    </div>
+                    <h5 class="speaker-title">Dr. Juan Tenorio</h5>
+                    <p class="speaker-position" style="color: #666;">Licenciado en Medicina y Cirugía, especialista en Medicina de Familia y Comunitaria<br />
+Ha trabajado en atención primaria y Urgencias hospitalarias por varios años
+Suficiencia investigadora en el área de Neurociencias por la Univ. Salamanca
+<br />Asesor de nutrición durante 21 años; ha llevado nutrición de jugadoras de baloncesto internacionales, de rugby de primera división y record guiness de horas jugando al padel.<br />
+Master en Coaching e Inteligencia emocional.<br />
+</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-4">
+                <div>
+                  <!-- Speaker-->
+                  <div class="speaker">
+                    <div class="speaker-img" data-triangle=".speaker-overlay">
+                      <img src="/src/images/Raquel_Reguera.png" alt="Raquel Reguera" height="354"/>
+                    </div>
+                    <h5 class="speaker-title">Raquel Reguera</h5>
+                    <p class="speaker-position" style="color: #666;">Educador financiero de calidad<br />
+Asesor en bienestar económico
+<br />Asesor de seguros<br />
+Miembro de la asociación de educadores y planificadores financieros<br />
+</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="button button-primary" href="#comprar" data-triangle=".button-overlay"><span>Comprar Ticket</span><span class="button-overlay"></span></a>
+        </div>
+      </section>
+      <!-- Section Conference Schedule-->
+      <section class="section section-lg bg-default text-center">
+        <div class="container">
+          <h6>Agenda</h6>
+          <h3>Programación del evento</h3>
+          <div class="tabs-custom tabs-horizontal tabs-corporate" id="tabs-1">
+            <!--Nav tabs-->
+            <ul class="nav nav-tabs">
+              <li class="nav-item" role="presentation"><a class="nav-link nav-link nav-link-secondary-darker" href="#tabs-1-1" data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span class="nav-link-cite">Día 6</span><span class="nav-link-title">Abril 2024</span></a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link nav-link-purple-heart" href="#tabs-1-2" data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span class="nav-link-cite">Día 7</span><span class="nav-link-title">Abril 2024</span></a></li>
+              </ul>
+            <!--Tab panes-->
+            <div class="tab-content wow fadeIn">
+              <div class="tab-pane fade" id="tabs-1-1">
+                <div class="card-group-custom card-group-corporate" id="accordion1" role="tablist" aria-multiselectable="false">
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">11:00</span><span class="schedule-classic-title heading-4">Registro</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">12:00</span><span class="schedule-classic-title heading-4">Formación de Alimentación y Nutrición</span><span class="schedule-classic-author">con el <span class="schedule-classic-author-name">Dr. Juan Tenorio</span> </span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">13:00</span><span class="schedule-classic-title heading-4">Formación en Complementación y su uso según los deportes</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!-- Schedule Simple-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title">
+                        <span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><svg class="svg-icon-md svg-icon-primary" role="img">
+                                            <use xlink:href="/src/images/svg/sprite.svg#clock"></use>
+                                          </svg><span class="schedule-classic-time">14:00</span><span class="schedule-classic-title heading-4">Receso para comer</span><span class="schedule-classic-author">Comida buffet para aplicar lo aprendido en la parte de Juan<br/>Hidratos: pasta/arroz/pasta integral o sin gluten y las salsas a parte<br />Zona de Ensalada y verdura<br/>Zona de proteína: carne o pescado o legumbres (por si hay veganos)<br/>Postres: yogures o fruta</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">16:30</span><span class="schedule-classic-title heading-4">Formación Coach</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">17:30</span><span class="schedule-classic-title heading-4">Emprendimiento deportivo</span><span class="schedule-classic-author">Cómo autofinanciarse sus gastos de viajes, material, nutrición, fisio… y como desarrollar una carrera profesional con el deporte</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title">
+                        <span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><svg class="svg-icon-md svg-icon-primary" role="img">
+                                            <use xlink:href="/src/images/svg/sprite.svg#clock"></use>
+                                          </svg><span class="schedule-classic-time">18:00</span><span class="schedule-classic-title heading-4">Descanso</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">19:00 - 20:00</span><span class="schedule-classic-title heading-4">Educación financiera para deportistas</span><span class="schedule-classic-author">Protección, ahorro e inversión. Cómo organizar la economía de un deportista amateur  y cómo organizar la economía de un deportista durante su carrera profesional para tener una independencia financiera después de su retirada</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!-- Schedule Simple-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title">
+                        <span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><svg class="svg-icon-md svg-icon-primary" role="img">
+                                            <use xlink:href="/src/images/svg/sprite.svg#clock"></use>
+                                          </svg><span class="schedule-classic-time">21:00</span><span class="schedule-classic-title heading-4">Cena deporte para aplicar lo aprendido</span><span class="schedule-classic-author">Zona de ensalada y verduras con alimentos rojos morados y naranjas<br />Zona de proteína: carne, pescado, legumbre…</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">Entrega del cheque a ASGEM</span><span class="schedule-classic-title heading-4">Se donará 5€ por inscripción para la asociación ASGEM
+</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="tabs-1-2">
+                <div class="card-group-custom card-group-corporate" id="accordion2" role="tablist" aria-multiselectable="false">
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">8:00 - 09:30</span><span class="schedule-classic-title heading-4">Desayuno</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">10:00 - 12:00</span><span class="schedule-classic-title heading-4">Entrenamiento</span><span class="schedule-classic-author">Si los de maratón, montaña o bici quieren salir antes para hacer tirada más larga sin problema.</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">12:00 - 13:00</span><span class="schedule-classic-title heading-4">Duchas y Check out</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                  <!--Bootstrap card-->
+                  <article class="card card-custom card-corporate">
+                    <div class="card-header" role="tab">
+                      <div class="card-title"><span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><span class="schedule-classic-time">13:00 - 14:00</span><span class="schedule-classic-title heading-4">Mesa redonda con los deportistas</span></span></span></span></span></div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="button button-primary" href="#comprar" data-triangle=".button-overlay"><span>Comprar Ticket</span><span class="button-overlay"></span></a>
+        </div>
+      </section>
+      <!-- Section Pre Footer-->
+      <section class="section section-lg bg-gray-900">
+        <div class="container">
+          <div class="row row-30" style="justify-content: center">
+            <div><img class="Logo" src="/src/images/logo.png" alt="Entrena Tus Hábitos" width="250"></div>
+          </div>
+        </div>
+      </section>
+      <!-- Divider-->
+      <div class="divider divider-gray-900 text-center"></div>
+      <!-- Footer Classic-->
+      <footer class="section footer-classic context-dark">
+        <div class="container">
+          <p class="rights"><span>Copyright </span><span>© </span><span class="copyright-year"></span><span> </span><span>by</span> Carolina García Garzón
+          </p>
+        </div>
+      </footer>
+    </div>
+    <div class="snackbars" id="form-output-global"></div>
+    <div class="block-with-svg-gradients">
+      <svg xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <lineargradient id="svg-gradient-primary" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(130,46,168);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:rgb(217,14,144);stop-opacity:1"></stop>
+          </lineargradient>
+        </defs>
+      </svg>
+    </div>
+	<script is:inline src="/js/core.min.js"></script>
+    <script is:inline src="/js/script.js"></script>
+  </body>
+</html>
