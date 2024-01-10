@@ -85,9 +85,9 @@ import {Image} from 'astro:assets';
             <div class="block-lg block-center">
               <h6>EL TIEMPO SE ACABA</h6>
               <h3>Compra tu ticket</h3>
-              <h6>El coste de la entrada son 185€, pero hasta el 30 de enero tenemos una oferta especial para no indecisos.</h6>
-              <h6>Además solo hasta el 30 de enero puedes hacer un pago único o en 3 meses sin intereses.</h6>
-              <h6>¡Haz tu reserva ahora y ahorra 20€! Sé parte de esta experiencia única y contribuye a una noble causa. Cada ticket cuenta.</h6>
+              <h4 style="text-transform: none">El coste de la entrada son 185€, pero hasta el 30 de enero tenemos una oferta especial.</h4>
+              <h4 style="text-transform: none">Además solo hasta el 30 de enero puedes hacer un pago único o en 3 meses sin intereses.</h4>
+              <h4 style="text-transform: none">¡Haz tu reserva ahora y ahorra 20€! Sé parte de esta experiencia única y contribuye a una noble causa. Cada ticket cuenta.</h4>
               <!-- Countdown rectangle-->
               <div class="countdown countdown-rect" data-countdown="data-countdown" data-to="2024-04-06">
                 <div class="countdown-block box-with-triangle-right wow fadeScale countdown-block-days" data-wow-delay="0s" data-triangle=".countdown-block-overlay">
@@ -202,21 +202,27 @@ import {Image} from 'astro:assets';
 			  <div class="pricing-modern-body">
 				<h5>Estancia</h5>
 				<ul class="lista">
-				  <li>Habitación noche del sábado con cama en habitación doble. Comida y cena del sábado y desayuno del domingo</li>
-				  <li>Hidratación: 3 litros de agua por persona</li>
-				  <li>Complementación: pre-entreno, bebida isotónica y recuperador</li>
-				  <li>Entrenamiento con entrenadores y deportistas: Campeones de España, Internacionales y Olímpicos</li>
-				  <li>Mesa redonda con los deportistas y entrenadores donde podrás preguntar y pasar un rato con ellos</li>
-				  <li>Regalo de bienvenida</li>
+				  <li><span style="color:#d90e90;">Habitación noche del sábado</span> con cama en habitación doble. Comida y cena del sábado y desayuno del domingo</li>
+				  <li><span style="color:#d90e90;">Hidratación:</span> 3 litros de agua por persona</li>
+				  <li><span style="color:#d90e90;">Complementación:</span> pre-entreno, bebida isotónica y recuperador</li>
+				  <li><span style="color:#d90e90;">Entrenamiento con entrenadores y deportistas:</span> Campeones de España, Internacionales y Olímpicos</li>
+				  <li><span style="color:#d90e90;">Mesa redonda</span> con los deportistas y entrenadores donde podrás preguntar y pasar un rato con ellos</li>
+				  <li><span style="color:#d90e90;">Regalo de bienvenida</span></li>
 				</ul>
 				  <h5>Formación</h5>
 				<ul class="lista">
-				  <li>Planificación de la alimentación diaria en entrenamientos, viajes y competiciones</li>
-				  <li>Formación en Complementación: qué son, propiedades, uso, comparativas, qué complementos son mejores para cada deporte</li>
-				  <li>Formación en emprendimiento: Cómo emprender relacionado con el deporte.</li>
-				  <li>Cómo autofinanciarse los gastos relacionados con el deporte: viajes, material, fisioterapia, nutrición… cómo generar unos ingresos extra e ingresos pasivos, y cómo desarrollar una carrera profesional con el deporte y la nutrición</li>
-				  <li>Formación en Educación financiera a nivel amateur y profesional.</li>
-				  <li>Trabajaremos sobre la protección del deportista, el ahorro y la inversión.</li>
+				  <li><span style="color:#d90e90;">Planificación de la alimentación diaria</span> en entrenamientos, viajes y competiciones</li>
+				  <li><span style="color:#d90e90;">Formación en Complementación:</span> qué son, propiedades, uso, comparativas, qué complementos son mejores para cada deporte</li>
+				  <li><span style="color:#d90e90;">Formación en emprendimiento:</span> Cómo emprender relacionado con el deporte.
+				    <ul>
+              <li style="margin-left: 20px">Cómo autofinanciarse los gastos relacionados con el deporte: viajes, material, fisioterapia, nutrición… cómo generar unos ingresos extra e ingresos pasivos, y cómo desarrollar una carrera profesional con el deporte y la nutrición</li>
+            </ul>
+          </li>
+				  <li><span style="color:#d90e90;">Formación en Educación financiera</span> a nivel amateur y profesional.
+            <ul>
+              <li style="margin-left: 20px">Trabajaremos sobre la protección del deportista, el ahorro y la inversión.</li>
+            </ul>
+          </li>
 				  <li>Formación para coach</li>
 				</ul>
 			  </div>
@@ -520,7 +526,7 @@ Miembro de la asociación de educadores y planificadores financieros<br />
       <!-- Footer Classic-->
       <footer class="section footer-classic context-dark">
         <div class="container">
-          <p class="rights"><span>Copyright </span><span>© </span><span class="copyright-year"></span><span> by</span> Carolina García Garzón
+          <p class="rights"><span>Copyright </span><span>© </span><span class="copyright-year"></span><span> by</span> Entrena Tus Hábitos
           </p>
         </div>
       </footer>
