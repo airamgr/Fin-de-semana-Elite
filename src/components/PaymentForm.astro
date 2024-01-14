@@ -1,0 +1,153 @@
+---
+
+
+---
+<form id="payment-form">
+  <label for="fullname">Nombre y apellidos:</label>
+  <input type="text" id="fullname" name="fullname" required>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Teléfono:</label>
+  <input type="tel" id="phone" name="phone" required>
+
+  <label for="intolerancia">¿Tienes alguna intolerancia o alergia alimentaria?</label>
+  <select id="intolerancia" name="intolerancia" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Gluten">Gluten</option>
+      <option value="Lactosa">Lactosa</option>
+      <option value="Frutos secos">Frutos secos</option>
+      <option value="Otro">Otro</option>
+  </select>
+
+  <label for="deporte">¿Qué deporte practicas?</label>
+  <select id="deporte" name="deporte" required>
+    <option value="">Selecciona un deporte</option>
+    <option value="Atletismo">Atletismo</option>
+    <option value="Bienestar y control de peso">Bienestar y control de peso</option>
+    <option value="Baloncesto">Baloncesto</option>
+    <option value="Balonmano">Balonmano</option>
+    <option value="Contacto: boxeo, judo, karate, kick boxing, lucha, taekwondo">Contacto: boxeo, judo, karate, kick boxing, lucha, taekwondo</option>
+    <option value="Rueda: ciclismo, triatlón">Rueda: ciclismo, triatlón</option>
+    <option value="Deportes invierno">Deportes invierno</option>
+    <option value="Montaña">Montaña</option>
+    <option value="Esgrima">Esgrima</option>
+    <option value="Fútbol y Fútbol Sala">Fútbol y Fútbol Sala</option>
+    <option value="Fuerza: CrossFit , Halterofilia, Gym, Calistenia">Fuerza: CrossFit , Halterofilia, Gym, Calistenia</option>
+    <option value="Gimnasia Ritmica y artística">Gimnasia Ritmica y artística</option>
+    <option value="Golf">Golf</option>
+    <option value="Hipica">Hipica</option>
+    <option value="Hockey">Hockey</option>
+    <option value="Motor: motociclismo, rally, Dakar">Motor: motociclismo, rally, Dakar</option>
+    <option value="Maratón y media maratón">Maratón y media maratón</option>
+    <option value="Natación">Natación</option>
+    <option value="Raqueta: Padel, tenis, tenis de mesa, squash, pelota">Raqueta: Padel, tenis, tenis de mesa, squash, pelota</option>
+    <option value="Patinaje">Patinaje </option>
+    <option value="Piragüismo">Piragüismo</option>
+    <option value="Rugby">Rugby</option>
+    <option value="Tiro con arco y olímpico">Tiro con arco y olímpico</option>
+    <option value="Vela">Vela</option>
+    <option value="Voleibol">Voleibol</option>
+    <option value="Otro">Otro</option>
+    </select>
+
+
+
+  <label for="sabor">¿Qué sabor quieres para la complementación preentreno?</label>
+  <input type="radio" id="Vainilla" name="Sabor" value="Vainilla" required>Vainilla
+  <input type="radio" id="Chocolate" name="Sabor" value="Chocolate" required>Chocolate
+  <input type="radio" id="Galleta" name="Sabor" value="Galleta" required>Galleta crujiente
+
+  <label for="Quien_Soy">¿Qué eres?</label>
+  <select id="Quien_Soy" name="Quien_Soy" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Coach">Coach</option>
+      <option value="Cliente">Cliente</option>
+      <option value="Deportista">Deportista invitado</option>
+  </select> 
+
+  <div id="additional-input-container"></div>
+  <label for="pago">¿Cómo quieres hacer el pago?</label>
+    <input type="radio" id="Unico" name="pago" value="price_1OWxIzBU9WDVlpaVvmxYZTlo" required>Pago único 
+    <input type="radio" id="Meses" name="pago" value="price_1OWxM3BU9WDVlpaVIsDdV3rG" required>3 Meses sin intereses
+<p></p>
+  <div class="text-center"><button type="submit">Pagar</button></div>
+</form>
+
+
+<script>
+// Importar Stripe.js
+import { loadStripe } from '@stripe/stripe-js';
+
+let stripePromise;
+try {
+    stripePromise = loadStripe('pk_test_51Kbv4ABU9WDVlpaVBzgECKDMkUnd5p94F3uG5EKLj6kSsJqoN6mnzK3BFDV4dKoWiXvwiOViO2wfOdTtXSPoaYKd00Ym7GwxTL');
+} catch (error) {
+    console.error('Error al cargar Stripe:', error);
+}
+
+console.log(stripePromise);
+
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM completamente cargado");
+
+    const form = document.getElementById('payment-form');
+    const Quien_Soy = document.getElementById('Quien_Soy');
+    const additionalInputContainer = document.getElementById('additional-input-container');
+    let modo = '';
+    
+    if (Quien_Soy) {
+        Quien_Soy.addEventListener('change', (e) => {
+            const value = e.target.value;
+            additionalInputContainer.innerHTML = '';
+
+            if (value === 'Coach') {
+                additionalInputContainer.innerHTML = '<label for="Coach">¿Quién es tu presidente ascendente?</label><input type="text" id="Coach" name="Coach" required>';
+            } else if (value === 'Cliente') {
+                additionalInputContainer.innerHTML = '<label for="Cliente">¿Quién es tu Coach?</label><input type="text" id="Cliente" name="Cliente" required>';
+            } else {
+                additionalInputContainer.innerHTML = '<label for="Deportista">He visto la información a través de ...</label><input type="text" id="Deportista" name="Deportista" required>';
+            }
+        });
+    }
+
+    if (form) {
+        console.log("Formulario encontrado", form);
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const valorSeleccionado = document.querySelector('input[name="pago"]:checked').value;
+
+            console.log(valorSeleccionado);
+            console.log("Formulario enviado");
+            if (valorSeleccionado === 'price_1OWxM3BU9WDVlpaVIsDdV3rG') {
+              modo = 'subscription';
+            }
+            else{
+              modo = 'payment'; 
+            }
+            const stripe = await stripePromise; // Esperar a que la promesa se resuelva
+
+            const { error } = await stripe.redirectToCheckout({
+                lineItems: [
+                    { price: valorSeleccionado, quantity: 1 }
+                ],
+                mode: modo,
+                successUrl: 'http://localhost:4321/success',
+                cancelUrl: 'http://localhost:4321',
+            });
+
+            if (error) {
+                console.error('Error en Stripe:', error);
+                alert('Hubo un error al procesar su pago con Stripe.');
+            }
+        });
+    } else {
+        console.log("Formulario no encontrado");
+    }
+});
+   
+
+</script>

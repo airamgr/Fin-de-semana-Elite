@@ -1,15 +1,15 @@
 ---
-// Importa e inyecta 'style.css' en la página
-import '../../public/css/style.css';
-import '../../public/css/fonts.css';
-import '../../public/css/bootstrap.css';
+import '../styles/style.css';
+import '../styles/fonts.css';
+import '../styles/bootstrap.css';
 
+import PaymentForm from '../components/PaymentForm.astro';
 import {Image} from 'astro:assets';
 
 
 ---
 
-<html class="wide" lang="es">
+  <html class="wide" lang="es">
   <head>
     <title>Fin de semana Élite</title>
     <meta charset="utf-8">
@@ -44,7 +44,7 @@ import {Image} from 'astro:assets';
                     <div class="unit unit-spacing-xs align-items-center">
                       <div class="unit-left line-height-reset">
                         <svg class="svg-icon-sm svg-icon-primary" role="img">
-                          <use xlink:href="/images/svg/sprite.svg#earth-globe"></use>
+                          <use xlink:href="/sprite.svg#earth-globe"></use>
                         </svg>
                       </div>
                       <div class="unit-body">
@@ -56,7 +56,7 @@ import {Image} from 'astro:assets';
                     <div class="unit unit-spacing-xs align-items-center">
                       <div class="unit-left line-height-reset">
                         <svg class="svg-icon-sm svg-icon-primary" role="img">
-                          <use xlink:href="/images/svg/sprite.svg#small-calendar"></use>
+                          <use xlink:href="/sprite.svg#small-calendar"></use>
                         </svg>
                       </div>
                       <div class="unit-body">
@@ -86,11 +86,14 @@ import {Image} from 'astro:assets';
             <div class="block-lg block-center">
               <h6>EL TIEMPO SE ACABA</h6>
               <h3>Compra tu ticket</h3>
-              <h4 style="text-transform: none">El coste de la entrada son 185€, pero hasta el 30 de enero tenemos una oferta especial.</h4>
-              <h4 style="text-transform: none">Además solo hasta el 30 de enero puedes hacer un pago único o en 3 meses sin intereses.</h4>
-              <h4 style="text-transform: none">¡Haz tu reserva ahora y ahorra 20€! Sé parte de esta experiencia única y contribuye a una noble causa. Cada ticket cuenta.</h4>
+              <h4 style="text-transform: none">El precio regular de la entrada todo incluido son 185€</h4>
+              <h3 style="text-transform: none">PROMOCIÓN</h4>
+              <h5 style="text-transform: none">Precio anticipado hasta el 30 de Enero</h5>
+              <h5 style="text-transform: none">Beneficios de reserva anticipada</h5>
+              <h4 style="text-transform: none">¡Ahorra 20€! tu ticket a 165€</h4>
+              <h5 style="text-transform: none">Posibilidad de pagar en 3 meses sin intereses o hacerlo en pago único</h5>
               <!-- Countdown rectangle-->
-              <div class="countdown countdown-rect" data-countdown="data-countdown" data-to="2024-04-06">
+              <div class="countdown countdown-rect" data-countdown="data-countdown" data-to="2024-01-30">
                 <div class="countdown-block box-with-triangle-right wow fadeScale countdown-block-days" data-wow-delay="0s" data-triangle=".countdown-block-overlay">
                   <div class="countdown-block-overlay"></div>
                   <svg class="countdown-circle" x="0" y="0" width="200" height="237" viewBox="0 0 200 237" data-progress-days="">
@@ -138,7 +141,8 @@ import {Image} from 'astro:assets';
               </div>
             </div>
           </div>
-          <a class="button button-primary" href="#comprar" data-triangle=".button-overlay"><span>Comprar Ticket</span><span class="button-overlay"></span></a>
+         <a class="button button-primary" href="#comprar" data-triangle=".button-overlay"><span>Comprar Ticket</span><span class="button-overlay"></span></a>
+         
         </div>
       </section>
       <!-- Section Biggest 2019 Digital Conference-->
@@ -161,7 +165,7 @@ import {Image} from 'astro:assets';
                   <div class="unit">
                     <div class="unit-left">
                       <svg class="svg-icon-sm svg-icon-primary" role="img">
-                        <use xlink:href="/images/svg/sprite.svg#earth-globe"></use>
+                        <use xlink:href="/sprite.svg#earth-globe"></use>
                       </svg>
                     </div>
                     <div class="unit-body">
@@ -174,7 +178,7 @@ import {Image} from 'astro:assets';
                   <div class="unit">
                     <div class="unit-left">
                       <svg class="svg-icon-sm svg-icon-primary" role="img">
-                        <use xlink:href="/images/svg/sprite.svg#small-calendar"></use>
+                        <use xlink:href="/sprite.svg#small-calendar"></use>
                       </svg>
                     </div>
                     <div class="unit-body">
@@ -195,7 +199,7 @@ import {Image} from 'astro:assets';
 		<div class="container">
 		  <h4 class="font-weight-bold text-center">Qué Incluye el ticket</h4>
 		  <div class="row row-30">
-			<div>
+			<div class="col-md-8 col-lg-6">
 			  <div class="pricing-modern-header">
 				<p class="pricing-modern-price heading-3">165.00€ pago único o paga en 3 meses sin intereses</p>
 				<p class="pricing-modern-description">A partir del 30 de Enero serán 185.00€ y sin plazos</p>
@@ -227,17 +231,11 @@ import {Image} from 'astro:assets';
 				  <li>Formación para coach</li>
 				</ul>
 			  </div>
-			  <div class="row row-30" style="justify-content: center">
-				<div class="col-md-6 col-lg-4">
-				  <!-- Enlace 1 -->
-				  <a class="button button-primary" href="https://buy.stripe.com/9AQ3dqeoA5Pb9Pi7sx" target="_blank" data-triangle=".button-overlay"><span>Comprar Ticket (pagando en 3 meses)</span><span class="button-overlay"></span></a>
-				</div>
-				<div class="col-md-6 col-lg-4">
+      </div>
+				<div class="col-md-8 col-lg-6">
 				  <!-- Enlace 2 -->
-				  <a class="button button-primary" href="https://buy.stripe.com/dR6g0c1BO5Pb7HafZ0" target="_blank" data-triangle=".button-overlay"><span>Comprar Ticket (pago único)</span><span class="button-overlay"></span></a>
+				  <PaymentForm />
 				</div>
-			  </div>
-			</div>
 		  </div>
 		</div>
 	  </section>
@@ -432,7 +430,7 @@ Miembro de la asociación de educadores y planificadores financieros<br />
                     <div class="card-header" role="tab">
                       <div class="card-title">
                         <span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><svg class="svg-icon-md svg-icon-primary" role="img">
-                                            <use xlink:href="/images/svg/sprite.svg#clock"></use>
+                                            <use xlink:href="/sprite.svg#clock"></use>
                                           </svg><span class="schedule-classic-time">14:00</span><span class="schedule-classic-title heading-4">Receso para comer</span><span class="schedule-classic-author">Comida buffet para aplicar lo aprendido en la parte de Juan<br/>Hidratos: pasta/arroz/pasta integral o sin gluten y las salsas a parte<br />Zona de Ensalada y verdura<br/>Zona de proteína: carne o pescado o legumbres (por si hay veganos)<br/>Postres: yogures o fruta</span></span></span></span></span></div>
                     </div>
                   </article>
@@ -453,7 +451,7 @@ Miembro de la asociación de educadores y planificadores financieros<br />
                     <div class="card-header" role="tab">
                       <div class="card-title">
                         <span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><svg class="svg-icon-md svg-icon-primary" role="img">
-                                            <use xlink:href="/images/svg/sprite.svg#clock"></use>
+                                            <use xlink:href="/sprite.svg#clock"></use>
                                           </svg><span class="schedule-classic-time">18:00</span><span class="schedule-classic-title heading-4">Descanso</span></span></span></span></span></div>
                     </div>
                   </article>
@@ -468,7 +466,7 @@ Miembro de la asociación de educadores y planificadores financieros<br />
                     <div class="card-header" role="tab">
                       <div class="card-title">
                         <span class="schedule-classic"><span class="unit unit-spacing-md align-items-center d-block d-md-flex"><span class="unit-body"><span class="schedule-classic-content"><svg class="svg-icon-md svg-icon-primary" role="img">
-                                            <use xlink:href="/images/svg/sprite.svg#clock"></use>
+                                            <use xlink:href="/sprite.svg#clock"></use>
                                           </svg><span class="schedule-classic-time">21:00</span><span class="schedule-classic-title heading-4">Cena deporte para aplicar lo aprendido</span><span class="schedule-classic-author">Zona de ensalada y verduras con alimentos rojos morados y naranjas<br />Zona de proteína: carne, pescado, legumbre…</span></span></span></span></span></div>
                     </div>
                   </article>
@@ -544,7 +542,10 @@ Miembro de la asociación de educadores y planificadores financieros<br />
         </defs>
       </svg>
     </div>
+    
 	<script is:inline src="/js/core.min.js"></script>
     <script is:inline src="/js/script.js"></script>
   </body>
 </html>
+
+

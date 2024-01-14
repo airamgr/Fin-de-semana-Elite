@@ -1496,9 +1496,9 @@
 
             form.clearForm();
 
-            if (select.length) {
+           /* if (select.length) {
               select.select2("val", "");
-            }
+            }*/
 
             form.find('input, textarea').trigger('blur');
 
@@ -1519,7 +1519,7 @@
     }
 
     // Select 2
-    if ( plugins.selectFilter.length ) {
+/*    if ( plugins.selectFilter.length ) {
       for ( var i = 0; i < plugins.selectFilter.length; i++ ) {
         var select = $( plugins.selectFilter[ i ] );
 
@@ -1531,7 +1531,7 @@
           dropdownCssClass:        select.attr( 'data-dropdown-class' ) || null
         } );
       }
-    }
+    }*/
 
     // lightGallery item
     if (plugins.lightGalleryItem.length) {
