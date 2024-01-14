@@ -115,8 +115,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
+            const valorSeleccionado = (document.querySelector("input[name='pago']:checked") as HTMLInputElement).value;
 
-            const valorSeleccionado = document.querySelector('input[name="pago"]:checked').value;
 
             console.log(valorSeleccionado);
             console.log("Formulario enviado");
