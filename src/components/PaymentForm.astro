@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fullname = (document.querySelector("input[name='fullname']") as HTMLInputElement).value;
             const email = (document.querySelector("input[name='email']") as HTMLInputElement).value;    
             const phone = (document.querySelector("input[name='phone']") as HTMLInputElement).value;
-            const preguntas = document.getElementById('miTextarea');
+            const preguntas = (document.getElementById('miTextarea')as HTMLTextAreaElement).value;
             
 
             // Obtener los valores de los select
@@ -178,9 +178,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 const encodedParams = Object.keys(params).map((key) => {
-                    const value = params[key as keyof typeof params]; // Aseguramos el tipo de la clave
-                    return encodeURIComponent(key) + "=" + encodeURIComponent(value);
-                }).join("&");
+    const value = params[key as keyof typeof params];
+
+    // Asegurarse de que 'value' no sea null o undefined
+    if (value != null) {
+        return encodeURIComponent(key) + "=" + encodeURIComponent(value);
+    } else {
+        // Manejar el caso donde 'value' es null o undefined
+        return encodeURIComponent(key) + "=";
+    }
+}).join("&");
 
                 const finalUrl = baseUrl + "?" + encodedParams;
 
