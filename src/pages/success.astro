@@ -1,9 +1,101 @@
 ---
-// Este archivo es más simple, solo muestra un mensaje.
-import Layout from '../layouts/BaseLayout.astro'
+import '../styles/style.css';
+
 ---
-<Layout>
-    <h1>Pago Exitoso</h1>
-    <p>¡Gracias por tu compra!</p>
-  </Layout>
+
+<html class="wide" lang="es">
+  <head>
+    <title>Fin de semana Élite - Pago correcto</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Barlow%7CBarlow+Condensed:300,400,500,600,700,900">
+  </head>
+  <body>
+    <script>
+      // Este script se ejecutará en el navegador
+      document.addEventListener('DOMContentLoaded', () => {
+        const fullUrl = window.location.href;
+        const url = new URL(fullUrl);
+        const nombre = url.searchParams.get('Nombre completo') as String;
+        const email = url.searchParams.get('Email') as String;
+        const phone = url.searchParams.get('Teléfono') as String;
+        const alergia = url.searchParams.get('Intolerancia') as String;
+        const deporte = url.searchParams.get('Deporte') as String;
+        const sabor = url.searchParams.get('El sabor del F1') as String;
+        const eres = url.searchParams.get('Eres') as String;
+        const expli = url.searchParams.get('Explicación') as String;
+        
+        let tablaHtml = "<table>";
+        
+        tablaHtml += `<tr><td><strong>Nombre completo:</strong> ${nombre}</td></tr>`;
+        tablaHtml += `<tr><td><strong>Email:</strong> ${email}</td></tr>`;
+        tablaHtml += `<tr><td><strong>Teléfono:</strong> ${phone}</td></tr>`;
+        tablaHtml += `<tr><td><strong>Intolerancia:</strong> ${alergia}</td></tr>`;
+        tablaHtml += `<tr><td><strong>Deporte:</strong> ${deporte}</td></tr>`;
+        tablaHtml += `<tr><td><strong>Sabor del F1</strong> ${sabor}</td></tr>`;
+        tablaHtml += `<tr><td><strong>¿Qué eres?:</strong> ${eres}</td></tr>`;
+        tablaHtml += `<tr><td><strong>Explicación:</strong> ${expli}</td></tr>`;
+        tablaHtml += "</table>";
+
+        document.getElementById('tabla-datos').innerHTML = tablaHtml;
+        // Construye el objeto de datos para enviar
+
+        const dataToSend = {
+        datos: '<p><strong>Nombre completo:</strong> '+nombre+'</p>'+
+        '<p><strong>Email:</strong> '+email+'</p>'+
+        '<p><strong>Teléfono:</strong> '+phone+'</p>'+
+        '<p><strong>Intolerancia:</strong> '+alergia+'</p>'+
+        '<p><strong>Deporte:</strong> '+deporte+'</p>'+
+        '<p><strong>Sabor del F1 para el preentreno:</strong> '+sabor+'</p>'+
+        '<p><strong>¿Qué eres?:</strong> '+eres+'</p>'+
+        '<p><strong>Detalle:</strong> '+expli+'</p>',
+        email: email
+      };
+
+
+        // URL del webhook proporcionada por Integromat
+        const webhookUrl = 'https://hook.eu1.make.com/s9yipwsv5db2e3kagudf8tpi7tljaomv';
+
+        // Envía los datos al webhook
+        fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(dataToSend)
+        }).then(response => {
+          if (response.ok) {
+            console.log('Datos enviados al webhook');
+          } else {
+            console.error('Error al enviar datos al webhook');
+          }
+        }).catch(error => {
+          console.error('Error al enviar datos al webhook:', error);
+        });
+        
+      });
+    </script>
+    <div class="page">
+        <div class="parallax-content section-lg context-dark text-center parallax-overlay-gradient-primary">
+            <!-- Block with content-->
+            <div class="block-lg block-center">
+              <h3>¡Enhorabuena!</h3>
+              <h4>Tu compra se ha realizado correctamente</h4>
+            </div>
+        </div>
+        
+        <div id="tabla-datos">
+          Cargando datos...
+        </div>
+        
+        <div class="block-lg block-center">
+          <h3>¡Gracias!</h3>
+        </div>    
   
+
+</div>
+
+</body>
+</html>

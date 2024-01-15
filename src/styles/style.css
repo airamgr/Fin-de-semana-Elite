@@ -14038,3 +14038,30 @@ padding: 15px;
 }
 }
 
+/* Estilos para la tabla */
+#tabla-datos {
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 80%;
+    max-width: 600px;
+    font-family: 'Arial', sans-serif; /* Asegúrate de usar la misma fuente que en tu sitio */
+    color: #333;
+}
+
+#tabla-datos td, #tabla-datos th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#tabla-datos tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#tabla-datos th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #4CAF50; /* Usa el mismo verde de tu sitio */
+    color: white;
+}
+

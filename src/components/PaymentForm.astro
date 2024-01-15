@@ -25,7 +25,6 @@
   <select id="deporte" name="deporte" required>
     <option value="">Selecciona un deporte</option>
     <option value="Atletismo">Atletismo</option>
-    <option value="Bienestar y control de peso">Bienestar y control de peso</option>
     <option value="Baloncesto">Baloncesto</option>
     <option value="Balonmano">Balonmano</option>
     <option value="Contacto: boxeo, judo, karate, kick boxing, lucha, taekwondo">Contacto: boxeo, judo, karate, kick boxing, lucha, taekwondo</option>
@@ -55,9 +54,12 @@
 
 
   <label for="sabor">¿Qué sabor quieres para la complementación preentreno?</label>
-  <input type="radio" id="Vainilla" name="Sabor" value="Vainilla" required>Vainilla
-  <input type="radio" id="Chocolate" name="Sabor" value="Chocolate" required>Chocolate
-  <input type="radio" id="Galleta" name="Sabor" value="Galleta" required>Galleta crujiente
+  <select id="sabor" name="sabor" required>
+    <option value="">Selecciona una opción</option>
+    <option value="Vainilla">Vainilla</option>
+    <option value="Chocolate">Chocolate</option>
+    <option value="Galleta crujiente">Galleta crujiente</option>
+  </select>
 
   <label for="Quien_Soy">¿Qué eres?</label>
   <select id="Quien_Soy" name="Quien_Soy" required>
@@ -93,47 +95,94 @@ document.addEventListener('DOMContentLoaded', () => {
     let modo = '';
     const form = document.getElementById('payment-form');
     const Quien_Soy = document.getElementById('Quien_Soy');
-const additionalInputContainer = document.getElementById('additional-input-container');
+    const additionalInputContainer = document.getElementById('additional-input-container');
 
-if (Quien_Soy && additionalInputContainer) {
-    Quien_Soy.addEventListener('change', (e) => {
-        // Asegúrate de que e.target es tratado como HTMLInputElement
-        const target = e.target as HTMLInputElement;
-        const value = target.value;
-        
-        additionalInputContainer.innerHTML = '';
+    if (Quien_Soy && additionalInputContainer) {
+        Quien_Soy.addEventListener('change', (e) => {
+            // Asegúrate de que e.target es tratado como HTMLInputElement
+            const target = e.target as HTMLInputElement;
+            const value = target.value;
+            
+            additionalInputContainer.innerHTML = '';
 
-        if (value === 'Coach') {
-            additionalInputContainer.innerHTML = '<label for="Coach">¿Quién es tu presidente ascendente?</label><input type="text" id="Coach" name="Coach" required>';
-        } else if (value === 'Cliente') {
-            additionalInputContainer.innerHTML = '<label for="Cliente">¿Quién es tu Coach?</label><input type="text" id="Cliente" name="Cliente" required>';
-        } else {
-            additionalInputContainer.innerHTML = '<label for="Deportista">He visto la información a través de ...</label><input type="text" id="Deportista" name="Deportista" required>';
+            if (value === 'Coach') {
+                additionalInputContainer.innerHTML = '<label for="Coach">¿Quién es tu presidente ascendente?</label><input type="text" id="Coach" name="Coach" required>';
+            } else if (value === 'Cliente') {
+                additionalInputContainer.innerHTML = '<label for="Cliente">¿Quién es tu Coach?</label><input type="text" id="Cliente" name="Cliente" required>';
+            } else {
+                additionalInputContainer.innerHTML = '<label for="Deportista">He visto la información a través de ...</label><input type="text" id="Deportista" name="Deportista" required>';
+            }
+        })}
+        else 
+        {
+        console.log("Alguno de los elementos no se encontró en el DOM.");
+        // Manejo adicional si los elementos no existen
         }
-    });
-} else {
-    console.log("Alguno de los elementos no se encontró en el DOM.");
-    // Manejo adicional si los elementos no existen
-}
-
-
 
     if (form) {
-        console.log("Formulario encontrado", form);
-
         form.addEventListener('submit', async (e) => {
-            e.preventDefault();
+        e.preventDefault();
+
+        // const valorSeleccionado = (document.querySelector("input[name='pago']:checked") as HTMLInputElement).value;
+
+            // Obtener los valores de los campos de texto y radio
+            const fullname = (document.querySelector("input[name='fullname']") as HTMLInputElement).value;
+            const email = (document.querySelector("input[name='email']") as HTMLInputElement).value;    
+            const phone = (document.querySelector("input[name='phone']") as HTMLInputElement).value;
+            
+
+            // Obtener los valores de los select
+            const selectintolerancia = (document.getElementById('intolerancia') as HTMLInputElement).value;
+            const selectdeporte = (document.getElementById('deporte') as HTMLInputElement).value;
+            const selectsabor = (document.getElementById('sabor') as HTMLInputElement).value;
+            const selectquien = (document.getElementById('Quien_Soy') as HTMLInputElement).value;
+
+            let selectexp_quien = '';
+
+            if (selectquien === 'Coach'){
+                 selectexp_quien = (document.querySelector("input[name='Coach']") as HTMLInputElement).value;
+            } else if (selectquien === 'Cliente'){
+                 selectexp_quien = (document.querySelector("input[name='Cliente']") as HTMLInputElement).value; 
+            }            
+            else{
+                 selectexp_quien = (document.querySelector("input[name='Deportista']") as HTMLInputElement).value;
+            }
+
+            
+            
+            const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien;
+            
+            let baseUrl = 'http://localhost:4321/success/';
+            // Crear el mensaje
+
+            const params = {
+                "Nombre completo": fullname,
+                "Email": email,
+                "Teléfono": phone,
+                "Intolerancia": selectintolerancia,
+                "Deporte": selectdeporte,
+                "El sabor del F1": selectsabor,
+                "Eres": selectquien,
+                "Explicación": selectexp_quien
+                };
+
+                const encodedParams = Object.keys(params).map(key => {
+                    return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
+                }).join("&");
+
+                const finalUrl = baseUrl + "?" + encodedParams;
+
+                console.log(finalUrl);
+            
             const valorSeleccionado = (document.querySelector("input[name='pago']:checked") as HTMLInputElement).value;
 
-
-            console.log(valorSeleccionado);
-            console.log("Formulario enviado");
             if (valorSeleccionado === 'price_1OWxM3BU9WDVlpaVIsDdV3rG') {
               modo = 'subscription';
             }
             else{
               modo = 'payment'; 
             }
+            const successUrl = finalUrl+'&Pago='+modo;
             const stripe = await stripePromise; // Esperar a que la promesa se resuelva
 
             const { error } = await stripe.redirectToCheckout({
@@ -141,16 +190,18 @@ if (Quien_Soy && additionalInputContainer) {
                     { price: valorSeleccionado, quantity: 1 }
                 ],
                 mode: modo,
-                successUrl: 'http://localhost:4321/success',
-                cancelUrl: 'http://localhost:4321',
+                successUrl: successUrl,
+                cancelUrl: 'http://localhost:4321/',
+                customerEmail: email,
             });
 
             if (error) {
                 console.error('Error en Stripe:', error);
                 alert('Hubo un error al procesar su pago con Stripe.');
             }
-        });
-    } else {
+        })
+    }
+    else {
         console.log("Formulario no encontrado");
     }
 });
