@@ -27,6 +27,18 @@
       <option value="Otro">Otro</option>
   </select>
 
+  <label for="profesional">¿Tienes alguna intolerancia o alergia alimentaria?</label>
+  <select id="profesional" name="profesional" required>
+      <option value="">Selecciona una opción</option>
+      <option value="Javi Guerra">Javi Guerra</option>
+      <option value="Manuel Carballo Sánchez">Manuel Carballo Sánchez</option>
+      <option value="David López Castán">David López Castán</option>
+      <option value="Juan Carlos García de Andrés">Juan Carlos García de Andrés</option>
+      <option value="Juan Pablo de Miguel Bravo">Juan Pablo de Miguel Bravo</option>
+      <option value="Dr. Juan Tenorio">Dr. Juan Tenorio</option>
+      <option value="Raquel Reguera">Raquel Reguera</option>
+  </select>
+
   <label for="deporte">¿Qué deporte practicas?</label>
   <select id="deporte" name="deporte" required>
     <option value="">Selecciona un deporte</option>
@@ -144,6 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Obtener los valores de los select
             const selectintolerancia = (document.getElementById('intolerancia') as HTMLInputElement).value;
+            const selectprofesional = (document.getElementById('profesional') as HTMLInputElement).value;
             const selectdeporte = (document.getElementById('deporte') as HTMLInputElement).value;
             const selectsabor = (document.getElementById('sabor') as HTMLInputElement).value;
             const selectquien = (document.getElementById('Quien_Soy') as HTMLInputElement).value;
@@ -161,7 +174,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             
             
-            const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien;
+            const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien+'&Profesional='+selectprofesional;
             
             let baseUrl = 'https://evento.entrenatushabitos.com/success/?';
             // Crear el mensaje
@@ -172,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Teléfono": phone,
                 "Intolerancia": selectintolerancia,
                 "Deporte": selectdeporte,
+                "Quiero entrenar con...": selectprofesional,
                 "El sabor del F1": selectsabor,
                 "Eres": selectquien,
                 "Explicación": selectexp_quien

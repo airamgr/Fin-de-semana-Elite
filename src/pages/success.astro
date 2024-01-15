@@ -26,6 +26,7 @@ import '../styles/style.css';
         const sabor = url.searchParams.get('El sabor del F1') as String;
         const eres = url.searchParams.get('Eres') as String;
         const expli = url.searchParams.get('Explicación') as String;
+        const profesional = url.searchParams.get('Profesional') as String;
        // const preguntas = url.searchParams.get('Preguntas') as String;
         
         let tablaHtml = "<table>";
@@ -35,6 +36,7 @@ import '../styles/style.css';
         tablaHtml += `<tr><td><strong>Teléfono:</strong> ${phone}</td></tr>`;
         tablaHtml += `<tr><td><strong>Intolerancia:</strong> ${alergia}</td></tr>`;
         tablaHtml += `<tr><td><strong>Deporte:</strong> ${deporte}</td></tr>`;
+        tablaHtml += `<tr><td><strong>Quiero entrenar con:</strong> ${profesional}</td></tr>`;
         tablaHtml += `<tr><td><strong>Sabor del F1</strong> ${sabor}</td></tr>`;
         tablaHtml += `<tr><td><strong>¿Qué eres?:</strong> ${eres}</td></tr>`;
         tablaHtml += `<tr><td><strong>Explicación:</strong> ${expli}</td></tr>`;
