@@ -39,7 +39,14 @@ import '../styles/style.css';
         tablaHtml += `<tr><td><strong>Explicación:</strong> ${expli}</td></tr>`;
         tablaHtml += "</table>";
 
-        document.getElementById('tabla-datos').innerHTML = tablaHtml;
+        const tablaDatosElement = document.getElementById('tabla-datos');
+        if (tablaDatosElement) {
+          tablaDatosElement.innerHTML = tablaHtml;
+        } else {
+          console.error('Elemento #tabla-datos no encontrado');
+        }
+        
+        
         // Construye el objeto de datos para enviar
 
         const dataToSend = {
