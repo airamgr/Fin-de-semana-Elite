@@ -90,25 +90,29 @@ try {
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente cargado");
 
+    let modo = '';
     const form = document.getElementById('payment-form');
     const Quien_Soy = document.getElementById('Quien_Soy');
-    const additionalInputContainer = document.getElementById('additional-input-container');
-    let modo = '';
-    
-    if (Quien_Soy) {
-        Quien_Soy.addEventListener('change', (e) => {
-            const value = e.target.value;
-            additionalInputContainer.innerHTML = '';
+const additionalInputContainer = document.getElementById('additional-input-container');
 
-            if (value === 'Coach') {
-                additionalInputContainer.innerHTML = '<label for="Coach">¿Quién es tu presidente ascendente?</label><input type="text" id="Coach" name="Coach" required>';
-            } else if (value === 'Cliente') {
-                additionalInputContainer.innerHTML = '<label for="Cliente">¿Quién es tu Coach?</label><input type="text" id="Cliente" name="Cliente" required>';
-            } else {
-                additionalInputContainer.innerHTML = '<label for="Deportista">He visto la información a través de ...</label><input type="text" id="Deportista" name="Deportista" required>';
-            }
-        });
-    }
+if (Quien_Soy && additionalInputContainer) {
+    Quien_Soy.addEventListener('change', (e) => {
+        const value = e.target.value;
+        additionalInputContainer.innerHTML = '';
+
+        if (value === 'Coach') {
+            additionalInputContainer.innerHTML = '<label for="Coach">¿Quién es tu presidente ascendente?</label><input type="text" id="Coach" name="Coach" required>';
+        } else if (value === 'Cliente') {
+            additionalInputContainer.innerHTML = '<label for="Cliente">¿Quién es tu Coach?</label><input type="text" id="Cliente" name="Cliente" required>';
+        } else {
+            additionalInputContainer.innerHTML = '<label for="Deportista">He visto la información a través de ...</label><input type="text" id="Deportista" name="Deportista" required>';
+        }
+    });
+} else {
+    console.log("Alguno de los elementos no se encontró en el DOM.");
+    // Manejo adicional si los elementos no existen
+}
+
 
     if (form) {
         console.log("Formulario encontrado", form);
