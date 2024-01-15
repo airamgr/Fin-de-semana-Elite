@@ -66,6 +66,10 @@
     <option value="Galleta crujiente">Galleta crujiente</option>
   </select>
 
+  <label for="mensaje">¿Quieres hacer alguna pregunta durante la mesa redonda? Dinos cual y a quien:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+
   <label for="Quien_Soy">¿Qué eres?</label>
   <select id="Quien_Soy" name="Quien_Soy" required>
       <option value="">Selecciona una opción</option>
@@ -134,6 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fullname = (document.querySelector("input[name='fullname']") as HTMLInputElement).value;
             const email = (document.querySelector("input[name='email']") as HTMLInputElement).value;    
             const phone = (document.querySelector("input[name='phone']") as HTMLInputElement).value;
+            const preguntas = (document.querySelector("input[name='mensaje']") as HTMLInputElement).value; 
             
 
             // Obtener los valores de los select
@@ -155,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             
             
-            const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien;
+            const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien+'&Preguntas='+preguntas;
             
             let baseUrl = 'https://evento.entrenatushabitos.com/success/';
             // Crear el mensaje
@@ -168,7 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Deporte": selectdeporte,
                 "El sabor del F1": selectsabor,
                 "Eres": selectquien,
-                "Explicación": selectexp_quien
+                "Explicación": selectexp_quien,
+                "Preguntas para la mesa redonda": preguntas
                 };
 
                 const encodedParams = Object.keys(params).map((key) => {
