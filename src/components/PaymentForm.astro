@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fullname = (document.querySelector("input[name='fullname']") as HTMLInputElement).value;
             const email = (document.querySelector("input[name='email']") as HTMLInputElement).value;    
             const phone = (document.querySelector("input[name='phone']") as HTMLInputElement).value;
-            const preguntas = (document.querySelector("input[name='mensaje']") as HTMLInputElement).value; 
+           // const preguntas = (document.querySelector("input[name='mensaje']") as HTMLInputElement).value; 
             
 
             // Obtener los valores de los select
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             
             
-            const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien+'&Preguntas='+preguntas;
+            const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien;
             
             let baseUrl = 'https://evento.entrenatushabitos.com/success/';
             // Crear el mensaje
@@ -173,8 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Deporte": selectdeporte,
                 "El sabor del F1": selectsabor,
                 "Eres": selectquien,
-                "Explicación": selectexp_quien,
-                "Preguntas para la mesa redonda": preguntas
+                "Explicación": selectexp_quien
                 };
 
                 const encodedParams = Object.keys(params).map((key) => {
