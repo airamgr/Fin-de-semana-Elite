@@ -67,8 +67,8 @@
     <option value="Galleta crujiente">Galleta crujiente</option>
   </select>
 
-  <label for="mensaje">¿Quieres hacer alguna pregunta durante la mesa redonda? Dinos cual y a quien:</label>
-    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>
+  <!--  <label for="mensaje">¿Quieres hacer alguna pregunta durante la mesa redonda? Dinos cual y a quien:</label>
+    <textarea id="mensaje" name="mensaje" rows="4" cols="50" placeholder="Escribe tu mensaje aquí..."></textarea>-->
 
 
   <label for="Quien_Soy">¿Qué eres?</label>
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const fullname = (document.querySelector("input[name='fullname']") as HTMLInputElement).value;
             const email = (document.querySelector("input[name='email']") as HTMLInputElement).value;    
             const phone = (document.querySelector("input[name='phone']") as HTMLInputElement).value;
-            const preguntas = (document.getElementById('miTextarea')as HTMLTextAreaElement).value;
+           // const preguntas = (document.getElementById('miTextarea')as HTMLTextAreaElement).value;
             
 
             // Obtener los valores de los select
@@ -174,8 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Deporte": selectdeporte,
                 "El sabor del F1": selectsabor,
                 "Eres": selectquien,
-                "Explicación": selectexp_quien,
-                "Preguntas para la mesa redonda": preguntas
+                "Explicación": selectexp_quien
+              //  "Preguntas para la mesa redonda": preguntas
                 };
 
                 const encodedParams = Object.keys(params).map((key) => {

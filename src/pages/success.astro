@@ -26,7 +26,7 @@ import '../styles/style.css';
         const sabor = url.searchParams.get('El sabor del F1') as String;
         const eres = url.searchParams.get('Eres') as String;
         const expli = url.searchParams.get('Explicación') as String;
-        const preguntas = url.searchParams.get('Preguntas') as String;
+       // const preguntas = url.searchParams.get('Preguntas') as String;
         
         let tablaHtml = "<table>";
         
@@ -38,7 +38,7 @@ import '../styles/style.css';
         tablaHtml += `<tr><td><strong>Sabor del F1</strong> ${sabor}</td></tr>`;
         tablaHtml += `<tr><td><strong>¿Qué eres?:</strong> ${eres}</td></tr>`;
         tablaHtml += `<tr><td><strong>Explicación:</strong> ${expli}</td></tr>`;
-        tablaHtml += `<tr><td><strong>Preguntas para la mesa redonda:</strong> ${preguntas}</td></tr>`;
+       // tablaHtml += `<tr><td><strong>Preguntas para la mesa redonda:</strong> ${preguntas}</td></tr>`;
         tablaHtml += "</table>";
 
         const tablaDatosElement = document.getElementById('tabla-datos');
@@ -59,8 +59,8 @@ import '../styles/style.css';
         '<p><strong>Deporte:</strong> '+deporte+'</p>'+
         '<p><strong>Sabor del F1 para el preentreno:</strong> '+sabor+'</p>'+
         '<p><strong>¿Qué eres?:</strong> '+eres+'</p>'+
-        '<p><strong>Detalle:</strong> '+expli+'</p>'+
-        '<p><strong>Preguntas para la mesa redonda:</strong> '+preguntas+'</p>', 
+        '<p><strong>Detalle:</strong> '+expli+'</p>',
+       // '<p><strong>Preguntas para la mesa redonda:</strong> '+preguntas+'</p>', 
         email: email
       };
 
