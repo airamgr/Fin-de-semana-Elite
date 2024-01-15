@@ -97,7 +97,10 @@ const additionalInputContainer = document.getElementById('additional-input-conta
 
 if (Quien_Soy && additionalInputContainer) {
     Quien_Soy.addEventListener('change', (e) => {
-        const value = e.target.value;
+        // Asegúrate de que e.target es tratado como HTMLInputElement
+        const target = e.target as HTMLInputElement;
+        const value = target.value;
+        
         additionalInputContainer.innerHTML = '';
 
         if (value === 'Coach') {
@@ -112,6 +115,7 @@ if (Quien_Soy && additionalInputContainer) {
     console.log("Alguno de los elementos no se encontró en el DOM.");
     // Manejo adicional si los elementos no existen
 }
+
 
 
     if (form) {
