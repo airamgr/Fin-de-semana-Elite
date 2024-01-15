@@ -20,6 +20,7 @@
   <label for="intolerancia">¿Tienes alguna intolerancia o alergia alimentaria?</label>
   <select id="intolerancia" name="intolerancia" required>
       <option value="">Selecciona una opción</option>
+      <option value="No">No</option>
       <option value="Gluten">Gluten</option>
       <option value="Lactosa">Lactosa</option>
       <option value="Frutos secos">Frutos secos</option>
@@ -178,20 +179,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 };
 
                 const encodedParams = Object.keys(params).map((key) => {
-    const value = params[key as keyof typeof params];
+                const value = params[key as keyof typeof params];
+                if (value != null) {
+                    return encodeURIComponent(key) + "=" + encodeURIComponent(value);
+                } else {
+                    return encodeURIComponent(key) + "=";
+                }
+                }).join("&");
 
-    // Asegurarse de que 'value' no sea null o undefined
-    if (value != null) {
-        return encodeURIComponent(key) + "=" + encodeURIComponent(value);
-    } else {
-        // Manejar el caso donde 'value' es null o undefined
-        return encodeURIComponent(key) + "=";
-    }
-}).join("&");
-
-                const finalUrl = baseUrl + "?" + encodedParams;
-
-                console.log(finalUrl);
+            const finalUrl = 'https://evento.entrenatushabitos.com/success/?' + encodedParams;
+            console.log(finalUrl);
             
             const valorSeleccionado = (document.querySelector("input[name='pago']:checked") as HTMLInputElement).value;
 
