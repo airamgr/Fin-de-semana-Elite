@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien;
             
-            let baseUrl = 'https://evento.entrenatushabitos.com/success/';
+            let baseUrl = 'https://evento.entrenatushabitos.com/success/?';
             // Crear el mensaje
 
             const params = {
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 }).join("&");
 
-            const finalUrl = 'https://evento.entrenatushabitos.com/success/?' + encodedParams;
+            const finalUrl = baseUrl + encodedParams;
             console.log(finalUrl);
             
             const valorSeleccionado = (document.querySelector("input[name='pago']:checked") as HTMLInputElement).value;
@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 successUrl: successUrl,
                 cancelUrl: 'https://evento.entrenatushabitos.com',
                 customerEmail: email,
+                billingAddressCollection: 'required',
             });
 
             if (error) {
