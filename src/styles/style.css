@@ -14065,3 +14065,21 @@ padding: 15px;
     color: white;
 }
 
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	align-items: center;
+}
+
+.image-box {
+    flex: 1 1 50%; /* Cada caja ocupa el 50% del espacio en pantallas grandes */
+    max-width: 50%; /* Evita que las cajas crezcan más de lo necesario */
+    box-sizing: border-box; /* Incluye el padding y el border en el ancho del elemento */
+    padding: 10px; /* Espacio entre las imágenes */
+}
+
+.image-box img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho de su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}

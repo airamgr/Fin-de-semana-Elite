@@ -2,6 +2,11 @@
 
 
 ---
+
+        <div class="block-lg block-center">
+          <h3>¡Compra ya tu ticket!</h3>
+        </div>
+
 <form id="payment-form">
   <label for="fullname">Nombre y apellidos:</label>
   <input type="text" id="fullname" name="fullname" required>
@@ -152,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             const mensaje = 'Nombre completo='+fullname+'&Email='+email+'&Teléfono='+phone+'&Intolerancia='+selectintolerancia+'&Deporte='+selectdeporte+'&El sabor del F1='+selectsabor+'&Eres='+selectquien+'&Explicación='+selectexp_quien;
             
-            let baseUrl = 'http://localhost:4321/success/';
+            let baseUrl = 'https://evento.entrenatushabitos.com/success/';
             // Crear el mensaje
 
             const params = {
@@ -192,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 ],
                 mode: modo,
                 successUrl: successUrl,
-                cancelUrl: 'http://localhost:4321/',
+                cancelUrl: 'https://evento.entrenatushabitos.com',
                 customerEmail: email,
             });
 
