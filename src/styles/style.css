@@ -14067,19 +14067,18 @@ padding: 15px;
 
 .image-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-	align-items: center;
+	margin-top: 2rem;
+	
 }
 
 .image-box {
-    flex: 1 1 50%; /* Cada caja ocupa el 50% del espacio en pantallas grandes */
-    max-width: 50%; /* Evita que las cajas crezcan más de lo necesario */
-    box-sizing: border-box; /* Incluye el padding y el border en el ancho del elemento */
-    padding: 10px; /* Espacio entre las imágenes */
+    flex: none;
 }
 
-.image-box img {
-    width: 100%; /* Hace que la imagen ocupe todo el ancho de su contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+.flex-grow {
+	flex-grow: 1;
+}
+
+.partner {
+	width: 150px;
 }
