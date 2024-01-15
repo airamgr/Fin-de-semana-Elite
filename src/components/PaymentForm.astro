@@ -166,8 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Explicación": selectexp_quien
                 };
 
-                const encodedParams = Object.keys(params).map((key: keyof typeof params) => {
-                    return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
+                const encodedParams = Object.keys(params).map((key) => {
+                    const value = params[key as keyof typeof params]; // Aseguramos el tipo de la clave
+                    return encodeURIComponent(key) + "=" + encodeURIComponent(value);
                 }).join("&");
 
                 const finalUrl = baseUrl + "?" + encodedParams;
