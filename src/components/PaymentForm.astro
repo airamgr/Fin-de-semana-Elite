@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Explicación": selectexp_quien
                 };
 
-                const encodedParams = Object.keys(params).map(key => {
+                const encodedParams = Object.keys(params).map((key: keyof typeof params) => {
                     return encodeURIComponent(key) + "=" + encodeURIComponent(params[key]);
                 }).join("&");
 
