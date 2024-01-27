@@ -18,8 +18,8 @@ import {Image} from 'astro:assets';
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Barlow%7CBarlow+Condensed:300,400,500,600,700,900">
   </head>
-  <body>
-    <div class="page">
+  <body class="deshabilitar">
+    <div class="page" id="overlay">
       <!-- Section Header Default-->
       <!-- Section Swiper Slider-->
       <section class="section section-swiper-absoulte context-dark text-center wow fadeIn">
@@ -61,7 +61,7 @@ import {Image} from 'astro:assets';
                       </div>
                       <div class="unit-body">
                         <h5 class="text-spacing-100"><span class="big">
-                            <time datetime="2024-04-06">6 y 7 de abril de 2024</time></span></h5>
+                            <time datetime="2024-04-06">Próximamente nueva fecha</time></span></h5>
                       </div>
                     </div>
                   </li>
@@ -79,10 +79,10 @@ import {Image} from 'astro:assets';
         </div>
       </section>
       <!-- Section Book Your Ticket-->
-      <section class="parallax-container section" data-parallax-img="/bg-parallax-01-1894x778.jpg">
+ <!--      <section class="parallax-container section" data-parallax-img="/bg-parallax-01-1894x778.jpg">
         <div class="parallax-content section-lg context-dark text-center parallax-overlay-gradient-primary">
           <div class="container wow fadeIn">
-            <!-- Block with content-->
+            
             <div class="block-lg block-center">
               <h6>EL TIEMPO SE ACABA</h6>
               <h3>Compra tu ticket</h3>
@@ -92,7 +92,7 @@ import {Image} from 'astro:assets';
               <h5 style="text-transform: none">Beneficios de reserva anticipada</h5>
               <h4 style="text-transform: none">¡Ahorra 20€! tu ticket a 165€</h4>
               <h5 style="text-transform: none">Posibilidad de pagar en 3 meses sin intereses o hacerlo en pago único</h5>
-              <!-- Countdown rectangle-->
+              
               <div class="countdown countdown-rect" data-countdown="data-countdown" data-to="2024-01-30">
                 <div class="countdown-block box-with-triangle-right wow fadeScale countdown-block-days" data-wow-delay="0s" data-triangle=".countdown-block-overlay">
                   <div class="countdown-block-overlay"></div>
@@ -144,7 +144,7 @@ import {Image} from 'astro:assets';
          <a class="button button-primary" href="#comprar" data-triangle=".button-overlay"><span>Comprar Ticket</span><span class="button-overlay"></span></a>
          
         </div>
-      </section>
+      </section>-->
       <!-- Section Biggest 2019 Digital Conference-->
       <section class="section section-lg bg-default wow fadeIn">
         <div class="container">
@@ -184,7 +184,7 @@ import {Image} from 'astro:assets';
                     <div class="unit-body">
                       <h5>Cuando</h5>
                       <p>
-                        <time datetime="2024-04-06">6 y 7 de abril de 2024</time>
+                        <time datetime="2024-04-06">Proximamente nueva fecha</time>
                       </p>
                     </div>
                   </div>
@@ -399,8 +399,8 @@ Miembro de la asociación de educadores y planificadores financieros<br />
           <div class="tabs-custom tabs-horizontal tabs-corporate" id="tabs-1">
             <!--Nav tabs-->
             <ul class="nav nav-tabs">
-              <li class="nav-item" role="presentation"><a class="nav-link nav-link nav-link-secondary-darker" href="#tabs-1-1" data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span class="nav-link-cite">Día 6</span><span class="nav-link-title">Abril 2024</span></a></li>
-              <li class="nav-item" role="presentation"><a class="nav-link nav-link-purple-heart" href="#tabs-1-2" data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span class="nav-link-cite">Día 7</span><span class="nav-link-title">Abril 2024</span></a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link nav-link nav-link-secondary-darker" href="#tabs-1-1" data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span class="nav-link-cite">Día 1 de evento</span><span class="nav-link-title">2024</span></a></li>
+              <li class="nav-item" role="presentation"><a class="nav-link nav-link-purple-heart" href="#tabs-1-2" data-toggle="tab" data-triangle=".nav-link-overlay"><span class="nav-link-overlay"></span><span class="nav-link-cite">Día 2 de evento</span><span class="nav-link-title">2024</span></a></li>
               </ul>
             <!--Tab panes-->
             <div class="tab-content wow fadeIn">
@@ -554,4 +554,39 @@ Miembro de la asociación de educadores y planificadores financieros<br />
   </body>
 </html>
 
+<script type=module>
 
+document.addEventListener("DOMContentLoaded", function () {
+  var overlay = document.getElementById("overlay");
+
+  // Mostrar el velo al cargar la página
+  overlay.style.display = "block";
+
+  // Deshabilitar enlaces y botones
+  var elementsToDisable = document.querySelectorAll("a, button");
+
+  elementsToDisable.forEach(function (element) {
+    element.setAttribute("disabled", "true");
+    element.addEventListener("click", function (event) {
+      event.preventDefault(); // Evitar que los enlaces redirijan
+    });
+  });
+});
+</script>
+
+<style is:inline>
+
+body {
+    position: relative !important;
+}
+
+#overlay {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Velo oscuro con opacidad del 50% */
+    z-index: 1000;
+}
+</style>
